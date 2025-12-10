@@ -3,13 +3,12 @@ kind: Service
 metadata:
   labels:
     app: result
-  name: result
+  name: svc-result
 spec:
-  type: NodePort
+  type: ClusterIP
   ports:
-  - name: "result-service"
-    port: 5001
+  - port: 8080
     targetPort: 80
-    nodePort: 31001
   selector:
     app: result
+    
